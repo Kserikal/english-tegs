@@ -1,0 +1,30 @@
+.Body {
+  background-color: #ebebeb;
+  
+  font-family: Montserrat;
+
+}
+
+/* .body_1 {
+  display: flex;
+  flex-direction: row-reverse;
+} */
+
+/* .cods {
+    font-size: large;
+} */
+
+/* .sidebar {
+  width: 250px;
+} */
+
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+._container {
+  max-width: 1050px;
+  margin: 0px auto;
+}
