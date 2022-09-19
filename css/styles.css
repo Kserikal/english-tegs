@@ -1,22 +1,50 @@
-.Body {
-  background-color: #ebebeb;
-  
-  font-family: Montserrat;
 
+/* Початок стандарного блоку CSS для скидання відступів і іншого */
+
+/* Обнулення */
+/* before - раніше */
+/* after - після */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+/* вирівнювання картинка по вертикалі */
+img {
+  vertical-align: top;
+}
+/* успадкувати ширину та розмір шрифта */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+/* кінець стандартного шаблону CSS */
 
-/* .body_1 {
-  display: flex;
-  flex-direction: row-reverse;
-} */
-
-/* .cods {
-    font-size: large;
-} */
-
-/* .sidebar {
-  width: 250px;
-} */
+.Body {
+  background-color: #FAFAFA;
+  font-family: Montserrat;
+  line-height: 1;
+  color: #252B42;
+  font-size: 14px;
+  font-weight: 500;
+}
 
 
 .wrapper {
@@ -24,7 +52,81 @@
   overflow: hidden;
 }
 
+ /* Робочий контейнер а не клас тега, */
 ._container {
   max-width: 1050px;
+  padding: 0px 15px;
   margin: 0px auto;
+  box-sizing: content-box;
 }
+  
+  /* ________Шапка_______ */
+
+  .header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+  }
+  .header__container {
+    display: flex;
+    min-height: 104px;
+    align-items: center;
+     
+  }
+
+  @media (max-width: 479px) {
+    .header__container {
+      min-height: 70px;
+    }
+  }
+ 
+
+  .header__logo {
+    font-style: 700px;
+    /* успадкували колір з body */
+    color: inherit; 
+    font-size: 24px;
+  }
+  .header__menu {
+    margin: 0px 0px 0px 132px;
+  }
+  /* на планшеті відступ буде менше */
+@media (max-width: 992px) {
+  .header__menu{
+    margin: 0px 0px 0px 80px;
+  }
+}
+  /* на телефоні відступ буде менше */
+@media (max-width: 767px) {
+  .header__menu {
+    margin: 0px 0px 0px 40px;
+  }
+}
+  .menu {
+    padding: 5px 0;
+    
+  }
+  .menu__list {
+    display: flex;
+    /* дозволяє пунктам "ломатися" */
+    flex-wrap: wrap;
+  }
+  .menu__item {
+    
+  }
+  /* Змінений клас, для того, щоб остання лішка (ast-child - остання дитина) не мала відступ  */
+  .menu__item:not(last-child) {
+    margin: 0px 21px 0px 0px;
+  }
+  .menu__link {
+    font-weight: 600;
+    color: #737373;
+    line-height: calc(24 / 14 * 100%);
+  }
+  @media (max-width: 479px) {
+    .menu__link {
+      font-size: 18px;
+    }
+  }
